@@ -10,6 +10,8 @@ const shuffleGrid = (cards) => {
 // Get all cards
 let cards = document.querySelectorAll('.card');
 const grid = document.getElementById('grid');
+const endScreen = document.querySelector('.end-screen');
+const resetBtn = document.getElementById('reset');
 let clickedCards = [];
 const matches = [];
 
@@ -47,9 +49,7 @@ const match = () => {
     matches.push(card);
   });
   if (checkWin()) {
-    setTimeout(() => {
-      ResetGame();
-    }, 2000);
+    endScreen.style.display = 'flex';
   }
 };
 
@@ -85,4 +85,9 @@ cards.forEach((card) => {
       checkCards(e.target);
     }, 900);
   });
+});
+
+resetBtn.addEventListener('click', () => {
+  endScreen.style.display = 'none';
+  ResetGame();
 });

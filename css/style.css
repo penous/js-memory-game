@@ -10,6 +10,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 body {
@@ -17,8 +18,48 @@ body {
   font-family: 'Chewy', cursive;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 h1 {
   font-size: 3rem;
+  justify-self: center;
+}
+
+.end-screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height: 50%;
+  color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.399);
+  backdrop-filter: blur(1.5rem);
+  z-index: 2;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.end-screen p {
+  padding: 0 3rem;
+  font-size: 2em;
+}
+
+.end-screen .btn-reset {
+  padding: 10px 50px;
+  margin-top: 1.5rem;
+  border-radius: 10px;
 }
 
 .container {
@@ -59,17 +100,6 @@ h1 {
   transition: background-color 0.2s linear;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.card .card-drop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 125px;
-  height: 125px;
-  background-color: turquoise;
-  border-radius: 5px;
-  transition: background-color 0.3s linear;
 }
 
 .card .card-back.hide {
