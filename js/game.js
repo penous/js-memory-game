@@ -11,6 +11,7 @@ const shuffleGrid = (cards) => {
 let cards = document.querySelectorAll('.card');
 const grid = document.getElementById('grid');
 let clickedCards = [];
+const matches = [];
 
 // Randomize grid
 const randomizeCards = () => {
@@ -43,7 +44,13 @@ const checkCards = (target) => {
 const match = () => {
   clickedCards.forEach((card) => {
     card.classList.add('match');
+    matches.push(card);
   });
+  if (checkWin()) {
+    setTimeout(() => {
+      ResetGame();
+    }, 2000);
+  }
 };
 
 const unmatch = () => {
@@ -54,12 +61,11 @@ const unmatch = () => {
 };
 
 const checkWin = () => {
-  const matches = document.querySelectorAll('.card-back.match');
   return matches.length === 16 ? true : false;
 };
 
 const ResetGame = () => {
-  if (checkWin()) startGame();
+  startGame();
 };
 
 const startGame = () => {
@@ -68,7 +74,7 @@ const startGame = () => {
     card.classList.remove('match');
     card.classList.remove('disabled');
   });
-  randomizeCards();
+  // randomizeCards();
 };
 startGame();
 
@@ -77,9 +83,6 @@ cards.forEach((card) => {
     revealCard(e.target);
     setTimeout(() => {
       checkCards(e.target);
-    }, 500);
-    setTimeout(() => {
-      ResetGame();
-    }, 9500);
+    }, 900);
   });
 });
