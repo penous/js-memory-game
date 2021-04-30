@@ -74,7 +74,7 @@ const startGame = () => {
     card.classList.remove('match');
     card.classList.remove('disabled');
   });
-  // randomizeCards();
+  randomizeCards();
 };
 startGame();
 
