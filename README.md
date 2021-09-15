@@ -12,4 +12,4 @@ https://penous.github.io/js-memory-game/
 
 - [ ] Bigger board
 - [ ] Use bigger point for multiplayer (Socket.io, NodeJs)
-- [ ] probably do this after we've seen nodeJS
+- [ ] Create an options page.
